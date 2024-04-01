@@ -9,7 +9,7 @@ pipeline {
                 checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Matt-Hays/csi5324-jenkins-assignment']])
                     sh "mvn -version"
 
-                    dir("~/Users/matthewhays/Desktop/Active Coursework/CSI 5324/Week 7/assignment7.2") {
+                    dir("/Users/matthewhays/Desktop/Active Coursework/CSI 5324/Week 7/assignment7.2/jenkins_tutorial") {
                         sh "mvn clean install"
                     }
             }
