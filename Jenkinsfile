@@ -24,7 +24,7 @@ pipeline {
         stage("Push image to dockerhub") {
             steps {
                 script {
-                    withCredentials([string(credentialsId: '0d672480-fb8f-4dc2-a666-ca76b8db8ffb', variable: 'password')]) {
+                    withCredentials([string(credentialsId: '19ccfee1-5351-4c45-8641-fce5b0bfcb43', variable: 'password')]) {
                         sh "docker login -u matthays -p %password%"
                         sh "docker push matthays/presentation_hub"
                     }
