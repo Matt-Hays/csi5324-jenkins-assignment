@@ -5,12 +5,13 @@ pipeline {
     }
     stages {
         stage("mvn test") {
-            checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Matt-Hays/csi5324-jenkins-assignment']])
+            steps {
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Matt-Hays/csi5324-jenkins-assignment']])
+                    sh "mvn -version"
 
-            sh "mvn -version"
-
-            dir("/Users/matthewhays/Desktop/Active Coursework/CSI 5324/Week 7/assignment7.2") {
-                sh "mvn clean install"
+                    dir("/Users/matthewhays/Desktop/Active Coursework/CSI 5324/Week 7/assignment7.2") {
+                        sh "mvn clean install"
+                    }
             }
         }
         stage("Build Docker File") {
