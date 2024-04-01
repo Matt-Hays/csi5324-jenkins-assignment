@@ -16,7 +16,7 @@ pipeline {
         }
         stage("Build Docker File") {
             steps {
-                dir("/Users/matthewhays/Desktop/Active Coursework/CSI 5324/Week 7/assignment7.2") {
+                dir("/Users/matthewhays/Desktop/Active Coursework/CSI 5324/Week 7/assignment7.2/jenkins-tutorial") {
                     sh "docker build -t matthays/presentation_hub ."
                 }
             }
