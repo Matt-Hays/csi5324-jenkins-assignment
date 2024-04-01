@@ -25,7 +25,7 @@ pipeline {
             steps {
                 script {
                     withCredentials([string(credentialsId: '19ccfee1-5351-4c45-8641-fce5b0bfcb43', variable: 'password')]) {
-                        sh "docker login -u matthays -p %password%"
+                        sh "docker login -u matthays -p '%password%'"
                         sh "docker push matthays/presentation_hub"
                     }
                 }
